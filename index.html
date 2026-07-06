@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JITO Pune Youth. AI for Business Leaders. Digital Scholar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F5EDD6;
+    --gold-pale: #FBF7EE;
+    --ink: #1A1410;
+    --ink-mid: #3D3228;
+    --ink-soft: #6B5C4E;
+    --ink-muted: #9E8E82;
+    --cream: #FDFAF5;
+    --cream-dark: #F3EDE3;
+    --white: #FFFFFF;
+    --border: rgba(201,168,76,0.25);
+    --border-light: rgba(201,168,76,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.10); pointer-events: none; }
+  .cover-deco-1 { width: 560px; height: 560px; top: -160px; right: -160px; }
+  .cover-deco-2 { width: 340px; height: 340px; bottom: 30px; left: -90px; border-color: rgba(201,168,76,0.07); }
+  .cover-deco-3 { width: 200px; height: 200px; top: 220px; right: 80px; border-color: rgba(201,168,76,0.05); }
+
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover-brand { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .cover-confidential { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: rgba(201,168,76,0.6); text-transform: uppercase; }
+
+  .cover-middle { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 40px; }
+  .cover-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .cover-eyebrow::before { content: ''; display: block; width: 48px; height: 1px; background: var(--border); }
+  .cover-eyebrow span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+
+  .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--white); margin-bottom: 20px; }
+  .cover-title em { font-style: italic; color: var(--gold); }
+  .cover-subtitle { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.55); max-width: 520px; line-height: 1.65; }
+
+  .cover-sessions-strip {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .cover-session-tag {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(201,168,76,0.75);
+    letter-spacing: 0.06em;
+  }
+
+  .cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(201,168,76,0.12); padding-top: 32px; }
+  .cover-meta-group { display: flex; gap: 48px; }
+  .cover-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+  .cover-meta-value { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.85); }
+  .cover-investment { text-align: right; }
+  .cover-investment-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+  .cover-investment-value { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--gold); letter-spacing: -0.01em; }
+  .cover-investment-sub { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+  /* MAIN */
+  .main { max-width: 860px; margin: 0 auto; padding: 80px 40px; }
+  hr.divider { border: none; border-top: 1px solid var(--border-light); margin: 64px 0; }
+
+  .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .eyebrow span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .eyebrow::after { content: ''; display: block; width: 48px; height: 1px; background: var(--border); }
+
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 600; color: var(--ink); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .section-title.light { color: var(--white); }
+  .section-intro { font-size: 15px; font-weight: 300; color: var(--ink-soft); line-height: 1.8; max-width: 640px; margin-bottom: 40px; }
+
+  /* OVERVIEW BLOCK */
+  .overview-block { background: var(--ink); border-radius: 16px; padding: 48px 52px; position: relative; overflow: hidden; }
+  .overview-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); pointer-events: none; }
+  .overview-deco-1 { width: 300px; height: 300px; top: -100px; right: -60px; }
+  .overview-deco-2 { width: 180px; height: 180px; bottom: -50px; left: 40px; }
+  .overview-block p { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.85; position: relative; z-index: 1; max-width: 680px; }
+
+  /* GLANCE TABLE */
+  .glance-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-light); margin-bottom: 8px; }
+  .glance-table thead tr { background: var(--ink); }
+  .glance-table thead th { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); padding: 16px 24px; text-align: left; }
+  .glance-table tbody tr { border-bottom: 1px solid var(--border-light); background: var(--white); }
+  .glance-table tbody tr:last-child { border-bottom: none; }
+  .glance-table tbody tr:nth-child(even) { background: var(--cream); }
+  .glance-table tbody td { padding: 14px 24px; font-size: 13.5px; color: var(--ink-soft); font-weight: 300; vertical-align: middle; }
+  .glance-table tbody td:first-child { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .glance-trainer-pill { display: inline-block; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 3px 12px; font-size: 11px; font-weight: 500; color: rgba(201,168,76,0.8); margin-left: 10px; vertical-align: middle; white-space: nowrap; }
+
+  /* SESSION BANNER */
+  .session-banner {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .session-banner-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); pointer-events: none; }
+  .session-banner-deco-1 { width: 200px; height: 200px; top: -80px; right: -40px; }
+
+  .session-banner-left { position: relative; z-index: 1; }
+  .session-banner-num { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+  .session-banner-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--white); line-height: 1.2; }
+
+  .session-banner-right { position: relative; z-index: 1; text-align: right; }
+  .session-banner-trainer-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+  .session-banner-trainer-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--gold); }
+
+  /* MODULE CARDS */
+  .module-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .module-header {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .module-num-block {
+    background: var(--ink);
+    min-width: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 14px;
+    flex-shrink: 0;
+  }
+  .module-num-big { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--gold); line-height: 1; display: block; }
+  .module-num-label { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 4px; display: block; }
+
+  .module-header-text { padding: 18px 26px; display: flex; flex-direction: column; justify-content: center; flex: 1; }
+  .module-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+  .module-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.25; }
+  .module-subtitle { font-size: 12.5px; font-weight: 300; font-style: italic; color: var(--ink-muted); margin-top: 3px; }
+
+  .module-body { padding: 28px 28px 0; }
+
+  .module-obj-outcome-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .module-obj-box, .module-outcome-box {
+    background: var(--cream-dark);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+
+  .module-box-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .module-box-sub { font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 7px; margin-top: 8px; }
+  .module-obj-text, .module-outcome-text { font-size: 13px; font-weight: 400; color: var(--ink-mid); line-height: 1.65; }
+
+  .module-topics-section { border-top: 1px solid var(--border-light); padding: 22px 0 28px; }
+  .module-topics-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px; }
+
+  .module-topics { list-style: none; }
+  .module-topics li { font-size: 13.5px; font-weight: 300; color: var(--ink-soft); line-height: 1.65; padding: 9px 0 9px 20px; border-bottom: 1px solid var(--border-light); position: relative; }
+  .module-topics li:last-child { border-bottom: none; }
+  .module-topics li::before { content: ''; position: absolute; left: 0; top: 17px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  /* TRAINER CARDS */
+  .trainer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .trainer-card {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 36px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .trainer-card-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); pointer-events: none; }
+  .trainer-card-deco-1 { width: 240px; height: 240px; bottom: -80px; right: -60px; }
+
+  .trainer-identity { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; position: relative; z-index: 1; }
+  .trainer-avatar { width: 50px; height: 50px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+  .trainer-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--white); line-height: 1.2; }
+  .trainer-role { font-size: 11px; font-weight: 400; color: var(--gold); margin-top: 3px; line-height: 1.4; }
+  .trainer-session-tag { display: inline-block; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.18); border-radius: 6px; padding: 3px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(201,168,76,0.65); margin-top: 6px; }
+
+  .trainer-bio { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.8; position: relative; z-index: 1; }
+
+  .trainer-clients { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; position: relative; z-index: 1; }
+  .trainer-pill { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 4px 13px; font-size: 11px; font-weight: 500; color: rgba(201,168,76,0.8); }
+
+  /* END SECTION */
+  .end-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+
+  .included-block { background: var(--ink); border-radius: 16px; padding: 36px; position: relative; overflow: hidden; }
+  .included-block-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); pointer-events: none; }
+  .included-block-deco-1 { width: 240px; height: 240px; top: -80px; right: -60px; }
+
+  .included-list { list-style: none; margin-top: 18px; position: relative; z-index: 1; }
+  .included-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.6; padding: 9px 0; border-bottom: 1px solid rgba(201,168,76,0.08); }
+  .included-list li:last-child { border-bottom: none; }
+  .included-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+
+  .investment-block { background: var(--gold-pale); border: 1px solid var(--border); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; justify-content: space-between; }
+  .investment-fee-label { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .investment-amount { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+  .investment-note { font-size: 13px; font-weight: 300; color: var(--ink-muted); margin-top: 6px; margin-bottom: 24px; }
+  .investment-details { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--border); padding-top: 18px; }
+  .investment-detail-row { display: flex; justify-content: space-between; align-items: center; }
+  .investment-detail-key { font-size: 11px; font-weight: 500; color: var(--ink-muted); }
+  .investment-detail-val { font-size: 12px; font-weight: 500; color: var(--ink-soft); }
+
+  /* FOOTER */
+  footer { background: var(--ink); padding: 40px 64px; }
+  .footer-main { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--gold); }
+  .footer-brand span { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 4px; }
+  .footer-meta { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.3); text-align: right; line-height: 1.6; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 0 0 20px; }
+  .footer-confidential { text-align: center; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .cover { padding: 40px 28px; }
+    .cover-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .cover-meta-group { flex-wrap: wrap; gap: 24px; }
+    .cover-investment { text-align: left; }
+    .cover-sessions-strip { flex-direction: column; }
+    .main { padding: 48px 24px; }
+    .overview-block { padding: 32px 28px; }
+    .session-banner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .session-banner-right { text-align: left; }
+    .module-obj-outcome-row { grid-template-columns: 1fr; }
+    .module-body { padding: 20px 20px 0; }
+    .module-header-text { padding: 16px 18px; }
+    .trainer-grid { grid-template-columns: 1fr; }
+    .end-grid { grid-template-columns: 1fr; }
+    footer { padding: 36px 28px; }
+    .footer-main { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-deco cover-deco-1"></div>
+  <div class="cover-deco cover-deco-2"></div>
+  <div class="cover-deco cover-deco-3"></div>
+
+  <div class="cover-top">
+    <div class="cover-brand">Digital Scholar</div>
+    <div class="cover-confidential">Confidential</div>
+  </div>
+
+  <div class="cover-middle">
+    <div class="cover-eyebrow"><span>Corporate Training Proposal</span></div>
+    <h1 class="cover-title">AI for<br><em>Business Leaders</em></h1>
+    <p class="cover-subtitle">A 6-Hour Full-Day Session for the Next Generation of Family Business Leaders in Pune</p>
+    <div class="cover-sessions-strip">
+      <div class="cover-session-tag">Session 1. AI in Social Media &amp; GenAI. Tanisha Bhansali</div>
+      <div class="cover-session-tag">Session 2. AI Powered Business Playbook. Rishi Jain</div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-meta-group">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Client</div>
+        <div class="cover-meta-value">JITO Pune Youth</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Audience</div>
+        <div class="cover-meta-value">Youth Members</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Participants</div>
+        <div class="cover-meta-value">Under 30</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Duration</div>
+        <div class="cover-meta-value">6 Hours</div>
+      </div>
+    </div>
+    <div class="cover-investment">
+      <div class="cover-investment-label">Investment</div>
+      <div class="cover-investment-value">INR 5,50,000</div>
+      <div class="cover-investment-sub">+ 18% GST + Conveyance</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- OVERVIEW -->
+  <div class="eyebrow"><span>Training Overview</span></div>
+  <h2 class="section-title">What This Program Is Built For</h2>
+  <div class="overview-block">
+    <div class="overview-deco overview-deco-1"></div>
+    <div class="overview-deco overview-deco-2"></div>
+    <p>A full-day 6-hour session built for JITO Pune youth members at the start of their AI journey. Two back-to-back sessions covering the complete picture: Session 1 takes the room through AI in social media and content creation with live hands-on demos, and Session 2 builds a practical AI-powered business playbook they can take back and use the same week. Two trainers. Two areas of expertise. One cohesive program.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GLANCE -->
+  <div class="eyebrow"><span>Program at a Glance</span></div>
+  <h2 class="section-title">Two Sessions. Six Modules. One Complete System.</h2>
+  <p class="section-intro">Each module builds on the last. By the end of the day, participants do not just understand AI. They have used it, built with it, and have a 30-day plan to keep going.</p>
+
+  <table class="glance-table">
+    <thead>
+      <tr>
+        <th>Module</th>
+        <th>Topic</th>
+        <th>Trainer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Module 1</td>
+        <td>What AI Actually Is and Why It Changes Everything</td>
+        <td><span class="glance-trainer-pill">Tanisha</span></td>
+      </tr>
+      <tr>
+        <td>Module 2</td>
+        <td>AI for Social Media Content. From Blank Page to Published Post</td>
+        <td><span class="glance-trainer-pill">Tanisha</span></td>
+      </tr>
+      <tr>
+        <td>Module 3</td>
+        <td>AI for Visual Content. Design and Video Without a Designer</td>
+        <td><span class="glance-trainer-pill">Tanisha</span></td>
+      </tr>
+      <tr>
+        <td>Module 4</td>
+        <td>Prompt Engineering. The Skill That Makes Everything Else Work</td>
+        <td><span class="glance-trainer-pill">Rishi Jain</span></td>
+      </tr>
+      <tr>
+        <td>Module 5</td>
+        <td>GenAI Across Your Business. Use Cases That Pay Off Immediately</td>
+        <td><span class="glance-trainer-pill">Rishi Jain</span></td>
+      </tr>
+      <tr>
+        <td>Module 6</td>
+        <td>Building Your Personal AI System. From Session to Habit</td>
+        <td><span class="glance-trainer-pill">Rishi Jain</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <!-- CURRICULUM -->
+  <div class="eyebrow"><span>Curriculum</span></div>
+  <h2 class="section-title">Module-by-Module Breakdown</h2>
+  <p class="section-intro">Every module is built around live demonstration and hands-on participation. No one sits and watches for 6 hours.</p>
+
+  <!-- SESSION 1 BANNER -->
+  <div class="session-banner">
+    <div class="session-banner-deco session-banner-deco-1"></div>
+    <div class="session-banner-left">
+      <div class="session-banner-num">Session 01</div>
+      <div class="session-banner-title">AI in Social Media &amp; GenAI</div>
+    </div>
+    <div class="session-banner-right">
+      <div class="session-banner-trainer-label">Trainer</div>
+      <div class="session-banner-trainer-name">Tanisha Bhansali</div>
+    </div>
+  </div>
+
+  <!-- MODULE 1 -->
+  <div class="module-card">
+    <div class="module-header">
+      <div class="module-num-block">
+        <span class="module-num-big">01</span>
+        <span class="module-num-label">Module</span>
+      </div>
+      <div class="module-header-text">
+        <div class="module-eyebrow">Foundation</div>
+        <div class="module-title">What AI Actually Is and Why It Changes Everything</div>
+        <div class="module-subtitle">For Complete Beginners Across All Business Types</div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-obj-outcome-row">
+        <div class="module-obj-box">
+          <div class="module-box-label">Objective</div>
+          <p class="module-obj-text">Every participant walks in with a vague idea of AI and walks out knowing exactly what it is, how it works, and why it is the most important shift happening in business right now.</p>
+        </div>
+        <div class="module-outcome-box">
+          <div class="module-box-label">Outcome</div>
+          <div class="module-box-sub">What Participants Can Do</div>
+          <p class="module-outcome-text">Participants have zero confusion about what AI is, can name the major tools, and understand exactly why starting today matters more than starting perfectly.</p>
+        </div>
+      </div>
+      <div class="module-topics-section">
+        <div class="module-topics-label">Topics Covered</div>
+        <ul class="module-topics">
+          <li>What AI is and what it is not. No jargon, no confusion. The plain-English explanation that makes everything else click.</li>
+          <li>How AI went from answering questions to doing the work. The shift from search engine to execution engine.</li>
+          <li>ChatGPT vs Claude vs Gemini vs Grok. What each one does best and which one to open first depending on the task.</li>
+          <li>Why beginners have an advantage right now. The people who start today will be 12 months ahead of everyone who waits.</li>
+          <li>The one rule that separates people who get results from people who get frustrated: stop asking, start delegating.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 2 -->
+  <div class="module-card">
+    <div class="module-header">
+      <div class="module-num-block">
+        <span class="module-num-big">02</span>
+        <span class="module-num-label">Module</span>
+      </div>
+      <div class="module-header-text">
+        <div class="module-eyebrow">Social Media</div>
+        <div class="module-title">AI for Social Media Content. From Blank Page to Published Post</div>
+        <div class="module-subtitle">For Instagram, LinkedIn, and WhatsApp Content Creation</div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-obj-outcome-row">
+        <div class="module-obj-box">
+          <div class="module-box-label">Objective</div>
+          <p class="module-obj-text">Participants learn how to use AI to plan, write, and produce social media content across platforms, faster and better than doing it manually.</p>
+        </div>
+        <div class="module-outcome-box">
+          <div class="module-box-label">Outcome</div>
+          <div class="module-box-sub">What Participants Can Do</div>
+          <p class="module-outcome-text">Participants can plan and write a full week of social media content using AI tools without any prior content creation experience.</p>
+        </div>
+      </div>
+      <div class="module-topics-section">
+        <div class="module-topics-label">Topics Covered</div>
+        <ul class="module-topics">
+          <li>How to brief AI for social media the right way. Why "write me a caption" fails and what to say instead.</li>
+          <li>Building a full month of content ideas in under 10 minutes using AI. Live demo on screen, done from scratch.</li>
+          <li>Writing captions for Instagram, LinkedIn, and WhatsApp that sound human, not robotic. The editing layer that makes AI content yours.</li>
+          <li>Hashtag research, posting schedules, and content calendar creation using AI. No spreadsheet needed.</li>
+          <li>Repurposing one piece of content into five formats using AI: reel script, caption, story, carousel text, and broadcast message. All from a single input.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 3 -->
+  <div class="module-card">
+    <div class="module-header">
+      <div class="module-num-block">
+        <span class="module-num-big">03</span>
+        <span class="module-num-label">Module</span>
+      </div>
+      <div class="module-header-text">
+        <div class="module-eyebrow">Visual Content</div>
+        <div class="module-title">AI for Visual Content. Design and Video Without a Designer</div>
+        <div class="module-subtitle">For Product Visuals, Reels, and Brand Content</div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-obj-outcome-row">
+        <div class="module-obj-box">
+          <div class="module-box-label">Objective</div>
+          <p class="module-obj-text">Participants see how AI tools remove the design barrier entirely and produce scroll-stopping visual content for any business, any product, any platform.</p>
+        </div>
+        <div class="module-outcome-box">
+          <div class="module-box-label">Outcome</div>
+          <div class="module-box-sub">What Participants Can Do</div>
+          <p class="module-outcome-text">Participants produce at least one piece of AI-generated visual content during the session and understand how to build a consistent content workflow without a design team.</p>
+        </div>
+      </div>
+      <div class="module-topics-section">
+        <div class="module-topics-label">Topics Covered</div>
+        <ul class="module-topics">
+          <li>AI image generation for product visuals, promotional creatives, and brand content. Live demo using real business examples from the room.</li>
+          <li>Building carousels, reels covers, and story templates using Canva AI without any design skills.</li>
+          <li>AI video tools: how to turn a script into a short video with voiceover, visuals, and subtitles in under 5 minutes.</li>
+          <li>Creating a consistent visual identity for a business using AI. Colours, fonts, tone, and templates set up once, used forever.</li>
+          <li>The content engine: how to connect written content from Module 2 with visual output into a repeatable weekly workflow.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SESSION 2 BANNER -->
+  <div class="session-banner" style="margin-top: 40px;">
+    <div class="session-banner-deco session-banner-deco-1"></div>
+    <div class="session-banner-left">
+      <div class="session-banner-num">Session 02</div>
+      <div class="session-banner-title">AI Powered Business Playbook</div>
+    </div>
+    <div class="session-banner-right">
+      <div class="session-banner-trainer-label">Trainer</div>
+      <div class="session-banner-trainer-name">Rishi Jain</div>
+    </div>
+  </div>
+
+  <!-- MODULE 4 -->
+  <div class="module-card">
+    <div class="module-header">
+      <div class="module-num-block">
+        <span class="module-num-big">04</span>
+        <span class="module-num-label">Module</span>
+      </div>
+      <div class="module-header-text">
+        <div class="module-eyebrow">Core Skill</div>
+        <div class="module-title">Prompt Engineering. The Skill That Makes Everything Else Work</div>
+        <div class="module-subtitle">For Getting Finished, Usable Business Output Every Time</div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-obj-outcome-row">
+        <div class="module-obj-box">
+          <div class="module-box-label">Objective</div>
+          <p class="module-obj-text">Participants move from random prompting to a structured method that gets finished, usable business output on the first or second try, every time.</p>
+        </div>
+        <div class="module-outcome-box">
+          <div class="module-box-label">Outcome</div>
+          <div class="module-box-sub">What Participants Can Do</div>
+          <p class="module-outcome-text">Every participant leaves with the RCTF framework memorised and at least one business prompt they personally built and tested during the session.</p>
+        </div>
+      </div>
+      <div class="module-topics-section">
+        <div class="module-topics-label">Topics Covered</div>
+        <ul class="module-topics">
+          <li>Why most people get bad results from AI and it has nothing to do with the tool. It is entirely the prompt.</li>
+          <li>The RCTF framework: Role, Context, Task, Format. One structure that works for every business task, every platform, every use case.</li>
+          <li>Live demo: the same task prompted badly vs prompted well. The room sees the difference in real time and votes on the output.</li>
+          <li>Hands-on practice: every participant writes a prompt for a real task from their own business or family business. Rishi corrects live.</li>
+          <li>Business prompt templates that work immediately: follow-up emails, vendor messages, pitch scripts, social content, business plans, and investor summaries.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 5 -->
+  <div class="module-card">
+    <div class="module-header">
+      <div class="module-num-block">
+        <span class="module-num-big">05</span>
+        <span class="module-num-label">Module</span>
+      </div>
+      <div class="module-header-text">
+        <div class="module-eyebrow">Application</div>
+        <div class="module-title">GenAI Across Your Business. Use Cases That Pay Off Immediately</div>
+        <div class="module-subtitle">For Sales, Operations, Finance, and Customer Communication</div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-obj-outcome-row">
+        <div class="module-obj-box">
+          <div class="module-box-label">Objective</div>
+          <p class="module-obj-text">Participants map AI to every major function in their business and identify where the highest-value applications are for their specific context.</p>
+        </div>
+        <div class="module-outcome-box">
+          <div class="module-box-label">Outcome</div>
+          <div class="module-box-sub">What Participants Can Do</div>
+          <p class="module-outcome-text">Participants identify their top three highest-value AI applications and leave with at least one built during the session and ready to use.</p>
+        </div>
+      </div>
+      <div class="module-topics-section">
+        <div class="module-topics-label">Topics Covered</div>
+        <ul class="module-topics">
+          <li>AI for sales and business development: proposal writing, pitch scripts, objection handling responses, and follow-up sequences built in minutes.</li>
+          <li>AI for operations: SOP drafting, vendor comparison, meeting summaries, and internal communication templates that save hours every week.</li>
+          <li>AI for finance and reporting: summarising data, flagging patterns, and generating plain-English reports from raw numbers without any technical skill.</li>
+          <li>AI for customer communication: complaint responses, inquiry replies, onboarding messages, and review management done at scale.</li>
+          <li>Rapid-fire live build: a participant names a real business problem from their family business and Rishi builds the AI solution on screen in 90 seconds.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 6 -->
+  <div class="module-card">
+    <div class="module-header">
+      <div class="module-num-block">
+        <span class="module-num-big">06</span>
+        <span class="module-num-label">Module</span>
+      </div>
+      <div class="module-header-text">
+        <div class="module-eyebrow">Setup and Action Plan</div>
+        <div class="module-title">Building Your Personal AI System. From Session to Habit</div>
+        <div class="module-subtitle">For Turning Today's Learning Into a Daily Business Practice</div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-obj-outcome-row">
+        <div class="module-obj-box">
+          <div class="module-box-label">Objective</div>
+          <p class="module-obj-text">Participants do not just leave with knowledge. They leave with a working setup and a clear plan for the next 30 days.</p>
+        </div>
+        <div class="module-outcome-box">
+          <div class="module-box-label">Outcome</div>
+          <div class="module-box-sub">What Participants Can Do</div>
+          <p class="module-outcome-text">Participants leave with Claude set up, one workflow built, and a written 30-day plan with specific weekly actions tied to their own business.</p>
+        </div>
+      </div>
+      <div class="module-topics-section">
+        <div class="module-topics-label">Topics Covered</div>
+        <ul class="module-topics">
+          <li>Setting up Claude the right way: account, preferences, and Projects configured for their specific business context.</li>
+          <li>Building one reusable workflow using the TAR framework: Trigger, Action, Result. A system they can run every week without starting from scratch.</li>
+          <li>The 30-day AI action plan: one task per week that builds toward a fully AI-assisted business operation by the end of the month.</li>
+          <li>The most common reasons people stop using AI after a workshop and exactly how to avoid each one.</li>
+          <li>Live Q&amp;A: open floor. Any business problem, any use case, any tool question. Rishi Jain and Tanisha Bhansali both in the room.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TRAINERS -->
+  <div class="eyebrow"><span>Your Trainers</span></div>
+  <h2 class="section-title">Two Specialists. One Complete Program.</h2>
+  <p class="section-intro">Each session is led by a trainer who has built their expertise specifically in that domain. Both are in the room for the full day.</p>
+
+  <div class="trainer-grid">
+    <div class="trainer-card">
+      <div class="trainer-card-deco trainer-card-deco-1"></div>
+      <div class="trainer-identity">
+        <div class="trainer-avatar">T</div>
+        <div>
+          <div class="trainer-name">Tanisha Bhansali</div>
+          <div class="trainer-role">Insta AI and Social Media Trainer, Digital Scholaramp; AI Content Coach. 332K+ Followers on Instagram</div>
+          <div class="trainer-session-tag">Session 01</div>
+        </div>
+      </div>
+      <p class="trainer-bio">Tanisha Bhansali is one of India's leading Instagram and AI content coaches with 332K+ followers and 6 years of experience in social media growth and content strategy. She has trained over 40,000 coaches, freelancers, influencers, and business owners across India. Her speciality is AI-assisted content systems: hooks, caption frameworks, visual repurposing workflows, and no-code tools that help any business produce consistent, high-performing content without a team. Every demo she runs is live, platform-specific, and built around real business scenarios from the room.</p>
+      <div class="trainer-clients" style="margin-top:18px;">
+        <span class="trainer-pill">332K+ Instagram Followers</span>
+        <span class="trainer-pill">40,000+ Students Trained</span>
+        <span class="trainer-pill">6 Years Experience</span>
+      </div>
+    </div>
+
+    <div class="trainer-card">
+      <div class="trainer-card-deco trainer-card-deco-1"></div>
+      <div class="trainer-identity">
+        <div class="trainer-avatar">RJ</div>
+        <div>
+          <div class="trainer-name">Rishi Jain</div>
+          <div class="trainer-role">Co-Founder, Digital Scholar. Best Digital Marketing Institute in India, 2024 (Elets)</div>
+          <div class="trainer-session-tag">Session 02</div>
+        </div>
+      </div>
+      <p class="trainer-bio">Rishi Jain has delivered corporate AI training to teams at Deloitte, Lakme, IDP Education, UTI Mutual Fund, Autodesk, Axis Bank, and over 30 other organisations. Every session is built around live demonstrations, hands-on exercises, and workflows participants can use the same day.</p>
+      <div class="trainer-clients">
+        <span class="trainer-pill">Deloitte</span>
+        <span class="trainer-pill">Lakme</span>
+        <span class="trainer-pill">IDP Education</span>
+        <span class="trainer-pill">Autodesk</span>
+        <span class="trainer-pill">Axis Bank</span>
+        <span class="trainer-pill">30+ Organisations</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- INCLUDED + INVESTMENT -->
+  <div class="eyebrow"><span>Engagement Details</span></div>
+  <h2 class="section-title">Investment and Engagement</h2>
+
+  <div class="end-grid">
+    <div class="included-block">
+      <div class="included-block-deco included-block-deco-1"></div>
+      <div class="eyebrow" style="margin-bottom:4px;"><span>What Is Included</span></div>
+      <ul class="included-list">
+        <li><span class="included-dot"></span><span>Full 6-hour in-person delivery in Pune</span></li>
+        <li><span class="included-dot"></span><span>Two specialist trainers across both sessions</span></li>
+        <li><span class="included-dot"></span><span>All session materials and reference guides</span></li>
+        <li><span class="included-dot"></span><span>Q&amp;A at the end of the session</span></li>
+        <li><span class="included-dot"></span><span>Live hands-on demos with real business scenarios throughout</span></li>
+      </ul>
+    </div>
+
+    <div class="investment-block">
+      <div>
+        <div class="investment-fee-label">Training Fee</div>
+        <div class="investment-amount">INR 5,50,000</div>
+        <div class="investment-note">For the full 6-hour exclusive workshop</div>
+      </div>
+      <div class="investment-details">
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">Duration</span>
+          <span class="investment-detail-val">6 Hours</span>
+        </div>
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">Total Modules</span>
+          <span class="investment-detail-val">6 Modules</span>
+        </div>
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">Sessions</span>
+          <span class="investment-detail-val">2 Sessions</span>
+        </div>
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">Mode</span>
+          <span class="investment-detail-val">Onsite</span>
+        </div>
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">Audience</span>
+          <span class="investment-detail-val">JITO Pune Youth Members</span>
+        </div>
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">GST</span>
+          <span class="investment-detail-val">18% applicable on training fee</span>
+        </div>
+        <div class="investment-detail-row">
+          <span class="investment-detail-key">Conveyance</span>
+          <span class="investment-detail-val">Applicable if session is held onsite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      Digital Scholar
+      <span>Prepared by Rishi Jain and Tanisha Bhansali</span>
+    </div>
+    <div class="footer-meta">
+      JITO Pune Youth. AI for Business Leaders.<br>
+      6-Hour Corporate Training Proposal
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-confidential">This proposal is confidential and prepared exclusively for JITO Pune Youth by Digital Scholar.</div>
+</footer>
+
+</body>
+</html>
